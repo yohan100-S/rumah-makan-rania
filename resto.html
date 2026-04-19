@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Rumah Makan Rania - Kelezatan Autentik khas Banyuwangi dengan Pelayanan Premium. Lokasi strategis di Kabupaten Banyuwangi.">
+    <title>Rumah Makan Rania | Cita Rasa Banyuwangi Premium</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome untuk Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="resto.css">
+</head>
+<body>
+
+    <!-- LOADING SCREEN -->
+    <div id="preloader">
+        <div class="loader"></div>
+        <p style="margin-top: 20px; color: var(--primary-gold); letter-spacing: 3px; font-size: 12px;">RANIA BANYUWANGI</p>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav id="navbar">
+        <div class="logo">RANIA <span style="font-weight: 300; color: #fff;">RESTO</span></div>
+        <ul class="nav-links">
+            <li><a href="#home">Beranda</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#about">Cerita Kami</a></li>
+            <li><a href="#reservation">Reservasi</a></li>
+            <li><a href="#contact">Kontak</a></li>
+        </ul>
+        <div class="nav-icons">
+            <div class="theme-toggle" id="modeBtn">
+                <i class="fas fa-moon"></i>
+            </div>
+            <a href="#reservation" class="btn btn-filled" style="padding: 10px 20px; font-size: 11px;">Booking Meja</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section id="home">
+        <div class="hero-content">
+            <p style="text-transform: uppercase; color: var(--primary-gold); margin-bottom: 10px;">The Spirit of Banyuwangi</p>
+            <h1>Warisan <span style="color: var(--primary-gold)">Rasa</span></h1>
+            <p>Menyajikan kehangatan masakan rumah dengan kualitas bintang lima. Pengalaman kuliner terbaik di jantung Kabupaten Banyuwangi.</p>
+            <div class="hero-actions">
+                <a href="#menu" class="btn btn-filled">Eksplor Menu</a>
+                <a href="#reservation" class="btn">Pesan Tempat</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- MENU SECTION -->
+    <section id="menu">
+        <div class="section-header reveal">
+            <h2>Koleksi Hidangan</h2>
+            <p>Pilihan bahan organik dari tanah Blambangan diolah dengan teknik modern.</p>
+        </div>
+
+        <div class="filter-container reveal">
+            <button class="filter-btn active" data-cat="all">Semua</button>
+            <button class="filter-btn" data-cat="makanan">Makanan</button>
+            <button class="filter-btn" data-cat="minuman">Minuman</button>
+            <button class="filter-btn" data-cat="dessert">Dessert</button>
+        </div>
+
+        <div class="menu-grid reveal" id="menu-list">
+            <!-- Items injected by JS -->
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" style="background: rgba(212,175,55,0.02)">
+        <div class="about-wrap">
+            <div class="about-img-box reveal">
+                <img src="https://images.unsplash.com/photo-1544148103-0773bf10d330?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Interior Rania">
+            </div>
+            <div class="about-text-box reveal">
+                <p style="color: var(--primary-gold); margin-bottom: 10px;">SEJAK 2018</p>
+                <h3>Sentuhan Ibu di <br> Setiap Sajian</h3>
+                <p>Rumah Makan Rania bermula dari mimpi sederhana: membawa resep keluarga ke meja makan yang lebih luas tanpa menghilangkan esensi "rumah" itu sendiri. Terletak di Banyuwangi, kami bangga menggunakan rempah lokal yang segar.</p>
+                <br>
+                <p><strong>Visi:</strong> Menjadi destinasi kuliner utama di Banyuwangi yang memadukan kenyamanan dan kemewahan rasa.</p>
+                <br>
+                <a href="#contact" class="btn">Cek Lokasi Kami</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESERVASI -->
+    <section id="reservation">
+        <div class="section-header reveal">
+            <h2>Reservasi</h2>
+            <p>Pastikan Anda mendapatkan tempat terbaik untuk momen istimewa.</p>
+        </div>
+
+        <div class="reservation-wrapper reveal">
+            <form id="bookingForm">
+                <div class="res-grid">
+                    <div class="input-group">
+                        <label>Nama Anda</label>
+                        <input type="text" id="name" placeholder="Nama Lengkap" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Email</label>
+                        <input type="email" id="email" placeholder="email@gmail.com" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Tanggal</label>
+                        <input type="date" id="date" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Waktu</label>
+                        <select id="time">
+                            <option>12:00 PM</option>
+                            <option>01:00 PM</option>
+                            <option>06:00 PM</option>
+                            <option>07:00 PM</option>
+                            <option>08:00 PM</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Jumlah Tamu</label>
+                        <input type="number" id="guests" min="1" max="20" value="2">
+                    </div>
+                    <div class="input-group">
+                        <label>Pesan Khusus</label>
+                        <input type="text" placeholder="Contoh: Meja dekat jendela">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-filled" style="width: 100%; margin-top: 30px;">Konfirmasi Pesanan</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact">
+        <div class="contact-grid">
+            <div class="map-container reveal">
+                <!-- Banyuwangi Center Map -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63177.30560370857!2d114.33144577831584!3d-8.245781300000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd1452f36d41865%3A0x4027a7657953280!2sBanyuwangi%2C%20Kabupaten%20Banyuwangi%2C%20Jawa%20Timur!5e0!3m2!1sid!2sid!4v1713500000000!5m2!1sid!2sid" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            <div class="contact-info-card reveal">
+                <h3 style="margin-bottom: 25px; color: var(--primary-gold);">Lokasi Kami</h3>
+                <div class="info-row">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <p style="font-weight: 600;">Alamat</p>
+                        <p class="text-muted">Jl. Utama Banyuwangi No. 88, Jawa Timur, Indonesia</p>
+                    </div>
+                </div>
+                <div class="info-row">
+                    <i class="fas fa-phone-alt"></i>
+                    <div>
+                        <p style="font-weight: 600;">Telepon / WA</p>
+                        <p class="text-muted">+62 83873756261</p>
+                    </div>
+                </div>
+                <div class="info-row">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <p style="font-weight: 600;">Jam Operasional</p>
+                        <p class="text-muted">Senin - Minggu: 10:00 - 22:00</p>
+                    </div>
+                </div>
+                <a href="https://wa.me/6282144332211" target="_blank" class="btn btn-filled" style="width: 100%; text-align: center;">Chat via WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="logo">RANIA <span style="color: var(--primary-gold);">RESTO</span></div>
+        <div class="footer-socials">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-tiktok"></i></a>
+        </div>
+        <p style="font-size: 11px; color: #555;">&copy; 2024 Rumah Makan Rania Banyuwangi. Hak Cipta Dilindungi.</p>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script src="resto.js"></script>
+</body>
+</html>
