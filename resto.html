@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Rumah Makan Rania - Kelezatan Autentik khas Banyuwangi dengan Pelayanan Premium. Lokasi strategis di Kabupaten Banyuwangi.">
+    <title>Rumah Makan Rania | Cita Rasa Banyuwangi Premium</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome untuk Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* =========================================
+           CSS VARIABLES - TEMA PREMIUM RANIA
+           ========================================= */
+        :root {
+            --primary-gold: #D4AF37;
+            --dark-gold: #996515;
+            --bg-dark: #0a0a0a;
+            --bg-card: #1a1a1a;
+            --text-light: #ffffff;
+            --text-muted: #cccccc;
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        /* LIGHT MODE OVERRIDES */
+        body.light-mode {
+            --bg-dark: #fcfcfc;
+            --bg-card: #ffffff;
+            --text-light: #1a1a1a;
+            --text-muted: #444444;
+        }
+
+        /* RESET STYLES */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+            transition: var(--transition);
+        }
+
+        h1, h2, h3, .brand-logo {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* PRELOADER */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .loader {
+            width: 60px;
+            height: 60px;
+            border: 3px solid #1a1a1a;
+            border-top: 3px solid var(--primary-gold);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* REUSABLE COMPONENTS */
+        section {
+            padding: 100px 10%;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 35px;
+            border: 1.5px solid var(--primary-gold);
+            color: var(--primary-gold);
+            text-transform: uppercase;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            transition: var(--transition);
+            cursor: pointer;
+            background: transparent;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background: var(--primary-gold);
+            color: #000;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
+        }
+
+        .btn-filled {
+            background: var(--primary-gold);
+            color: #000;
+        }
+
+        .btn-filled:hover {
+            background: transparent;
+            color: var(--primary-gold);
+        }
+
+        /* NAVBAR */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 10%;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        nav.sticky {
+            background: rgba(0, 0, 0, 0.95);
+            padding: 15px 10%;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        body.light-mode nav.sticky {
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-gold);
+            letter-spacing: 2px;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 35px;
+            list-style: none;
+        }
+
+        .nav-links li a {
+            font-size: 13px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            text-transform: uppercase;
+            text-decoration: none;
+            color: var(--text-light);
+        }
+
+        .nav-links li a:hover {
+            color: var(--primary-gold);
+        }
+
+        .nav-icons {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .theme-toggle {
+            cursor: pointer;
+            font-size: 18px;
+            color: var(--primary-gold);
+        }
+
+        /* MOBILE MENU TOGGLE */
+        .mobile-menu-btn {
+            display: none;
+            color: var(--primary-gold);
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* HERO SECTION */
+        #home {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), 
+                        url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 5%;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .hero-content p {
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 40px;
+            letter-spacing: 1px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        /* MENU SECTION */
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            color: var(--primary-gold);
+        }
+
+        .filter-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            padding: 8px 12px;
+            transition: var(--transition);
+            border-bottom: 2px solid transparent;
+            font-size: 12px;
+        }
+
+        .filter-btn.active {
+            color: var(--primary-gold);
+            border-bottom: 2px solid var(--primary-gold);
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .menu-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .menu-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-gold);
+        }
+
+        .menu-img-wrapper {
+            aspect-ratio: 4/3;
+            overflow: hidden;
+        }
+
+        .menu-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+
+        .menu-card:hover .menu-img-wrapper img {
+            transform: scale(1.1);
+        }
+
+        .menu-body {
+            padding: 20px;
+        }
+
+        .menu-title-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 10px;
+        }
+
+        .menu-name {
+            font-size: 1.15rem;
+            font-weight: 700;
+        }
+
+        .menu-price {
+            color: var(--primary-gold);
+            font-weight: 600;
+            white-space: nowrap;
+            margin-left: 10px;
+        }
+
+        .menu-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 300;
+        }
+
+        /* ABOUT SECTION */
+        .about-wrap {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .about-img-box {
+            position: relative;
+        }
+
+        .about-img-box img {
+            width: 100%;
+            border-radius: 4px;
+            display: block;
+        }
+
+        .about-img-box::after {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: -20px;
+            bottom: -20px;
+            border: 2px solid var(--primary-gold);
+            z-index: -1;
+        }
+
+        .about-text-box h3 {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            margin-bottom: 25px;
+        }
+
+        /* RESERVASI FORM */
+        .reservation-wrapper {
+            background: var(--bg-card);
+            max-width: 900px;
+            margin: 0 auto;
+            padding: clamp(20px, 5vw, 60px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+            border-radius: 8px;
+        }
+
+        .res-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .input-group label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            color: var(--primary-gold);
+        }
+
+        .input-group input, .input-group select, .input-group textarea {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid #333;
+            padding: 12px;
+            color: #fff;
+            outline: none;
+            transition: var(--transition);
+            border-radius: 4px;
+            font-family: inherit;
+        }
+
+        body.light-mode .input-group input, 
+        body.light-mode .input-group select {
+            background: #f0f0f0;
+            color: #1a1a1a;
+            border-color: #ddd;
+        }
+
+        .input-group input:focus {
+            border-color: var(--primary-gold);
+        }
+
+        /* CONTACT & MAP */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 40px;
+        }
+
+        .map-container {
+            height: 400px;
+            border: 1px solid var(--primary-gold);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .contact-info-card {
+            padding: 30px;
+            background: var(--bg-card);
+            border-radius: 8px;
+        }
+
+        .info-row {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .info-row i {
+            color: var(--primary-gold);
+            font-size: 20px;
+            margin-top: 5px;
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 60px 10% 30px;
+            background: #050505;
+            text-align: center;
+            border-top: 1px solid #1a1a1a;
+        }
+
+        .footer-socials {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .footer-socials a {
+            font-size: 18px;
+            color: var(--text-muted);
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .footer-socials a:hover {
+            color: var(--primary-gold);
+            transform: translateY(-5px);
+        }
+
+        /* ANIMATIONS */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* RESPONSIVE BREAKPOINTS */
+        @media (max-width: 1024px) {
+            section { padding: 80px 5%; }
+            .about-wrap { grid-template-columns: 1fr; gap: 40px; }
+            .about-img-box { order: 2; }
+            .about-text-box { order: 1; text-align: center; }
+            .about-img-box::after { display: none; }
+        }
+
+        @media (max-width: 768px) {
+            nav { padding: 20px 5%; }
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                height: 100vh;
+                background: var(--bg-card);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: 0.5s;
+                box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+                z-index: 1001;
+            }
+
+            .res-grid, .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-actions .btn {
+                width: 100%;
+            }
+
+            .reservation-wrapper {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- LOADING SCREEN -->
+    <div id="preloader">
+        <div class="loader"></div>
+        <p style="margin-top: 20px; color: var(--primary-gold); letter-spacing: 3px; font-size: 12px; font-weight: 600;">RANIA BANYUWANGI</p>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav id="navbar">
+        <a href="#home" class="logo">RANIA <span style="font-weight: 300; color: var(--primary-gold);">RESTO</span></a>
+        
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Beranda</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#about">Cerita Kami</a></li>
+            <li><a href="#reservation">Reservasi</a></li>
+            <li><a href="#contact">Kontak</a></li>
+        </ul>
+
+        <div class="nav-icons">
+            <div class="theme-toggle" id="modeBtn" title="Ganti Tema">
+                <i class="fas fa-moon"></i>
+            </div>
+            <div class="mobile-menu-btn" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="home">
+        <div class="hero-content">
+            <p style="text-transform: uppercase; color: var(--primary-gold); margin-bottom: 15px; font-weight: 600; letter-spacing: 3px;">The Spirit of Blambangan</p>
+            <h1>Warisan <span style="color: var(--primary-gold)">Rasa</span></h1>
+            <p>Menyajikan kehangatan masakan rumah dengan kualitas bintang lima di jantung Kabupaten Banyuwangi.</p>
+            <div class="hero-actions">
+                <a href="#menu" class="btn btn-filled">Lihat Menu</a>
+                <a href="#reservation" class="btn">Booking Meja</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- MENU SECTION -->
+    <section id="menu">
+        <div class="section-header reveal">
+            <h2>Koleksi Hidangan</h2>
+            <p>Pilihan bahan organik dari petani lokal Banyuwangi diolah secara istimewa.</p>
+        </div>
+
+        <div class="filter-container reveal">
+            <button class="filter-btn active" data-cat="all">Semua</button>
+            <button class="filter-btn" data-cat="makanan">Makanan</button>
+            <button class="filter-btn" data-cat="minuman">Minuman</button>
+            <button class="filter-btn" data-cat="prasmanan">Prasmanan</button>
+        </div>
+
+        <div class="menu-grid reveal" id="menu-list">
+            <!-- Items injected by JS -->
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" style="background: rgba(212,175,55,0.03)">
+        <div class="about-wrap">
+            <div class="about-img-box reveal">
+                <img src="https://images.unsplash.com/photo-1544148103-0773bf10d330?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Interior Rania">
+            </div>
+            <div class="about-text-box reveal">
+                <p style="color: var(--primary-gold); margin-bottom: 10px; font-weight: 600;">SEJAK 2018</p>
+                <h3>Sentuhan Ibu di <br> Setiap Sajian</h3>
+                <p>Rumah Makan Rania bermula dari mimpi sederhana: membawa resep keluarga ke meja makan yang lebih luas tanpa menghilangkan esensi "rumah".</p>
+                <br>
+                <p>Terletak di Banyuwangi, kami bangga menggunakan rempah lokal yang segar untuk menjaga kualitas rasa yang autentik dan tak terlupakan.</p>
+                <br>
+                <a href="#contact" class="btn" style="padding: 10px 25px;">Kunjungi Kami</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESERVASI -->
+    <section id="reservation">
+        <div class="section-header reveal">
+            <h2>Reservasi</h2>
+            <p>Pastikan Anda mendapatkan tempat terbaik untuk momen istimewa Anda.</p>
+            <p>Dimohon untuk hubungi nomor yang sudah tersedia dibawah</p>
+        </div>
+
+        <div class="reservation-wrapper reveal">
+            <form id="bookingForm">
+                <div class="res-grid">
+                    <div class="input-group">
+                        <label>Nama Lengkap</label>
+                        <input type="text" id="name" placeholder="Contoh: Budi Santoso" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Email</label>
+                        <input type="email" id="email" placeholder="budi@example.com" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Tanggal Kedatangan</label>
+                        <input type="date" id="date" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Waktu</label>
+                        <select id="time">
+                            <option>12:00 PM</option>
+                            <option>01:00 PM</option>
+                            <option>06:00 PM</option>
+                            <option>07:00 PM</option>
+                            <option>08:00 PM</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Jumlah Tamu</label>
+                        <input type="number" id="guests" min="1" max="20" value="2">
+                    </div>
+                    <div class="input-group">
+                        <label>Pesan Tambahan</label>
+                        <input type="text" placeholder="Contoh: Kursi bayi / Alergi">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-filled" style="width: 100%; margin-top: 30px; border-radius: 4px;">Konfirmasi Pesanan</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact">
+        <div class="contact-grid">
+            <div class="map-container reveal">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63177.30560370857!2d114.33144577831584!3d-8.245781300000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd1452f36d41865%3A0x4027a7657953280!2sBanyuwangi%2C%20Kabupaten%20Banyuwangi%2C%20Jawa%20Timur!5e0!3m2!1sid!2sid!4v1713500000000!5m2!1sid!2sid" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            <div class="contact-info-card reveal">
+                <h3 style="margin-bottom: 25px; color: var(--primary-gold);">Hubungi Kami</h3>
+                <div class="info-row">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <p style="font-weight: 600;">Lokasi</p>
+                        <p class="text-muted" style="font-size: 0.9rem;">Jl. Utama Banyuwangi No. 88, Jawa Timur</p>
+                    </div>
+                </div>
+                <div class="info-row">
+                    <i class="fas fa-phone-alt"></i>
+                    <div>
+                        <p style="font-weight: 600;">WhatsApp</p>
+                        <p class="text-muted" style="font-size: 0.9rem;">+62 83873756261</p>
+                    </div>
+                </div>
+                <div class="info-row">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <p style="font-weight: 600;">Jam Buka</p>
+                        <p class="text-muted" style="font-size: 0.9rem;">Setiap Hari: 10:00 - 22:00</p>
+                    </div>
+                </div>
+                <a href="https://wa.me/6283873756261" target="_blank" class="btn btn-filled" style="width: 100%; text-align: center; border-radius: 4px;">Chat WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="logo" style="margin-bottom: 20px;">RANIA <span style="color: var(--primary-gold);">RESTO</span></div>
+        <div class="footer-socials">
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+        </div>
+        <p style="font-size: 11px; color: #666; letter-spacing: 1px;">&copy; 2024 Rumah Makan Rania Banyuwangi. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script src="resto.js"> </script>
+</body>
+</html>
