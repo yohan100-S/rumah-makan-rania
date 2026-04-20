@@ -1,11 +1,12 @@
  // 1. DATA MENU RANIA
         const menuData = [
-            { id: 1, cat: 'makanan', name: 'Nasi Tempong Rania', price: 'Rp 45.000', desc: 'Sajian ikonik Banyuwangi dengan sambal segar dan lauk lengkap.', img: 'https://images.unsplash.com/photo-1546241072-48010ad28c2c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80' },
-            { id: 2, cat: 'makanan', name: 'Pindang Koyong', price: 'Rp 55.000', desc: 'Ikan tenggiri masak bumbu kuning yang asam dan pedas.', img: 'https://images.unsplash.com/photo-1555126634-323283e090fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80' },
-            { id: 3, cat: 'makanan', name: 'Ayam Pedas Rania', price: 'Rp 48.000', desc: 'Ayam kampung bakar disiram kuah santan pedas gurih.', img: 'https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80' },
-            { id: 4, cat: 'minuman', name: 'Es Kopi Ijen', price: 'Rp 28.000', desc: 'Kopi asli lereng Ijen dengan gula aren murni.', img: 'https://images.unsplash.com/photo-1461023058943-07fcbe16d735?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80' },
-            { id: 5, cat: 'minuman', name: 'Es Degan Madu', price: 'Rp 25.000', desc: 'Kelapa muda segar dengan madu hutan asli.', img: 'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80' },
-            { id: 6, cat: 'dessert', name: 'Pisang Goreng Keju', price: 'Rp 22.000', desc: 'Pisang kepok pilihan dengan taburan keju melimpah.', img: 'https://images.unsplash.com/photo-1563805042-7684c019e1cb?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80' }
+            { id: 1, cat: 'makanan', name: 'Ayam Bakar Potong', price: 'Rp 30.000', desc: 'Sajian ikonik Banyuwangi dengan sambal segar dan lauk lengkap.', img: 'https://images.unsplash.com/photo-1546241072-48010ad28c2c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80' },
+            { id: 2, cat: 'makanan', name: 'Ayam Betutu Kampung', price: 'Rp 40.000', desc: 'Ayam Betutu Kampung disiram kuah santan pedas gurih.', img: 'https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80' },
+            { id: 3, cat: 'makanan', name: 'Bebek Bakar', price: 'Rp 45.000', desc: 'Bebek Bakar dengan bumbu manis, gurih, dan pedas.', img: 'https://images.unsplash.com/photo-1555126634-323283e090fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80' },
+            { id: 4, cat: 'makanan', name: 'Sop Iga', price: 'Rp 50.000', desc: 'Bebek Bakar dengan bumbu manis, gurih, dan pedas.', img: 'https://images.unsplash.com/photo-1555126634-323283e090fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80' },
+            { id: 5, cat: 'minuman', name: 'Jus Avokad', price: 'Rp 15.000', desc: 'Kopi asli lereng Ijen dengan gula aren murni.', img: 'https://images.unsplash.com/photo-1461023058943-07fcbe16d735?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80' },
+            { id: 6, cat: 'minuman', name: 'Lemon Tea Ice', price: 'Rp 15.000', desc: 'Lemon segar dengan Teh asli.', img: 'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80' },
+            { id: 7, cat: 'prasmanan', name: 'Pisang Goreng Keju', price: 'Rp 22.000', desc: 'Pisang kepok pilihan dengan taburan keju melimpah.', img: 'https://images.unsplash.com/photo-1563805042-7684c019e1cb?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80' }
         ];
 
         // 2. PRELOADER
