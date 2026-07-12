@@ -369,6 +369,347 @@
             margin-bottom: 25px;
         }
 
+        /* GALERI / PORTOFOLIO ACARA */
+        .portfolio-filter {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .portfolio-card {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            aspect-ratio: 4/3;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            transition: var(--transition);
+        }
+
+        .portfolio-card:hover {
+            border-color: var(--primary-gold);
+            transform: translateY(-8px);
+        }
+
+        .portfolio-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+
+        .portfolio-card:hover img {
+            transform: scale(1.08);
+        }
+
+        .portfolio-tag {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: rgba(0,0,0,0.7);
+            color: var(--primary-gold);
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 6px 12px;
+            border-radius: 20px;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 25px 20px 18px;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0));
+        }
+
+        .portfolio-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.05rem;
+            color: #fff;
+            margin-bottom: 4px;
+        }
+
+        .portfolio-date {
+            font-size: 0.75rem;
+            color: var(--primary-gold);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* LIGHTBOX */
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.92);
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            max-width: 900px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .lightbox-content img {
+            width: 100%;
+            max-height: 65vh;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .lightbox-info {
+            margin-top: 20px;
+        }
+
+        .lightbox-info h3 {
+            color: var(--primary-gold);
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+        }
+
+        .lightbox-info p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 25px;
+            right: 30px;
+            color: var(--primary-gold);
+            font-size: 28px;
+            cursor: pointer;
+            background: transparent;
+            border: none;
+        }
+
+        /* TESTIMONI / RATING SLIDER */
+        #testimoni {
+            background: rgba(212,175,55,0.03);
+        }
+
+        .testi-slider {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .testi-track-wrapper {
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        .testi-track {
+            display: flex;
+            transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .testi-slide {
+            flex: 0 0 100%;
+            padding: clamp(20px, 5vw, 60px);
+            background: var(--bg-card);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .testi-stars {
+            color: var(--primary-gold);
+            font-size: 1.1rem;
+            letter-spacing: 4px;
+            margin-bottom: 20px;
+        }
+
+        .testi-stars i.far {
+            color: #555;
+        }
+
+        .testi-quote {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: clamp(1rem, 2.5vw, 1.3rem);
+            color: var(--text-light);
+            margin-bottom: 25px;
+            line-height: 1.7;
+        }
+
+        .testi-author {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .testi-avatar {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary-gold);
+            margin-bottom: 8px;
+        }
+
+        .testi-name {
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .testi-role {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .testi-nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+            margin-top: 35px;
+        }
+
+        .testi-arrow {
+            background: transparent;
+            border: 1.5px solid var(--primary-gold);
+            color: var(--primary-gold);
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
+
+        .testi-arrow:hover {
+            background: var(--primary-gold);
+            color: #000;
+        }
+
+        .testi-dots {
+            display: flex;
+            gap: 10px;
+        }
+
+        .testi-dot {
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: #444;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            padding: 0;
+        }
+
+        .testi-dot.active {
+            background: var(--primary-gold);
+            transform: scale(1.3);
+        }
+
+        .testi-summary {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 45px;
+            flex-wrap: wrap;
+        }
+
+        .testi-score {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            color: var(--primary-gold);
+            line-height: 1;
+        }
+
+        .testi-summary-stars {
+            color: var(--primary-gold);
+            font-size: 1rem;
+            letter-spacing: 3px;
+        }
+
+        .testi-summary-text {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* FORM ULASAN PENGUNJUNG */
+        .testi-form-wrapper {
+            max-width: 700px;
+            margin: 60px auto 0;
+            background: var(--bg-card);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 8px;
+            padding: clamp(25px, 5vw, 45px);
+        }
+
+        .testi-form-wrapper h3 {
+            color: var(--primary-gold);
+            font-size: clamp(1.3rem, 3vw, 1.6rem);
+            margin-bottom: 8px;
+            text-align: center;
+        }
+
+        .testi-form-sub {
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+        }
+
+        .star-input {
+            font-size: 1.8rem;
+            color: var(--primary-gold);
+            display: flex;
+            gap: 8px;
+        }
+
+        .star-input i {
+            cursor: pointer;
+            transition: transform 0.15s ease;
+        }
+
+        .star-input i:hover {
+            transform: scale(1.15);
+        }
+
+        .testi-form-msg {
+            margin-top: 15px;
+            font-size: 0.85rem;
+            text-align: center;
+            color: var(--primary-gold);
+            min-height: 18px;
+        }
+
         /* RESERVASI FORM */
         .reservation-wrapper {
             background: var(--bg-card);
@@ -537,6 +878,10 @@
             .reservation-wrapper {
                 padding: 30px 20px;
             }
+
+            .testi-nav {
+                gap: 15px;
+            }
         }
     </style>
 </head>
@@ -556,6 +901,8 @@
             <li><a href="#home">Beranda</a></li>
             <li><a href="#menu">Menu</a></li>
             <li><a href="#about">Cerita Kami</a></li>
+            <li><a href="#portfolio">Galeri Acara</a></li>
+            <li><a href="#testimoni">Testimoni</a></li>
             <li><a href="#reservation">Reservasi</a></li>
             <li><a href="#contact">Kontak</a></li>
         </ul>
@@ -617,6 +964,108 @@
                 <br>
                 <a href="#contact" class="btn" style="padding: 10px 25px;">Kunjungi Kami</a>
             </div>
+        </div>
+    </section>
+
+    <!-- GALERI / PORTOFOLIO ACARA -->
+    <section id="portfolio" style="background: rgba(212,175,55,0.03)">
+        <div class="section-header reveal">
+            <h2>Jejak Acara Kami</h2>
+            <p>Dipercaya menjadi tempat berlangsungnya berbagai momen istimewa, mulai dari kunjungan tamu penting hingga acara komunitas.</p>
+        </div>
+
+        <div class="portfolio-filter reveal">
+            <button class="filter-btn active" data-pcat="all">Semua</button>
+            <button class="filter-btn" data-pcat="vip">Kunjungan VIP</button>
+            <button class="filter-btn" data-pcat="korporat">Korporat</button>
+            <button class="filter-btn" data-pcat="pernikahan">Pernikahan</button>
+            <button class="filter-btn" data-pcat="komunitas">Komunitas</button>
+        </div>
+
+        <div class="portfolio-grid reveal" id="portfolio-list">
+            <!-- Items injected by JS -->
+        </div>
+    </section>
+
+    <!-- LIGHTBOX MODAL -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Tutup"><i class="fas fa-times"></i></button>
+        <div class="lightbox-content">
+            <img id="lightboxImg" src="" alt="">
+            <div class="lightbox-info">
+                <h3 id="lightboxTitle"></h3>
+                <p id="lightboxDesc"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- TESTIMONI / RATING SLIDER -->
+    <section id="testimoni">
+        <div class="section-header reveal">
+            <h2>Kata Mereka</h2>
+            <p>Pengalaman nyata dari tamu yang sudah mencicipi hidangan kami.</p>
+        </div>
+
+        <div class="testi-summary reveal">
+            <span class="testi-score">4.8</span>
+            <div>
+                <div class="testi-summary-stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                </div>
+                <p class="testi-summary-text">Berdasarkan 128 ulasan tamu</p>
+            </div>
+        </div>
+
+        <div class="testi-slider reveal">
+            <div class="testi-track-wrapper">
+                <div class="testi-track" id="testiTrack">
+                    <!-- Slides injected by JS -->
+                </div>
+            </div>
+
+            <div class="testi-nav">
+                <button class="testi-arrow" id="testiPrev" aria-label="Ulasan sebelumnya"><i class="fas fa-chevron-left"></i></button>
+                <div class="testi-dots" id="testiDots"></div>
+                <button class="testi-arrow" id="testiNext" aria-label="Ulasan berikutnya"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+
+        <!-- FORM ULASAN PENGUNJUNG -->
+        <div class="testi-form-wrapper reveal">
+            <h3>Bagikan Pengalaman Anda</h3>
+            <p class="testi-form-sub">Beri rating dan tulis ulasan Anda, akan langsung tampil di slider testimoni.</p>
+
+            <form id="testiForm">
+                <div class="input-group" style="margin-bottom: 20px;">
+                    <label>Rating Anda</label>
+                    <div class="star-input" id="starInput">
+                        <i class="far fa-star" data-value="1"></i>
+                        <i class="far fa-star" data-value="2"></i>
+                        <i class="far fa-star" data-value="3"></i>
+                        <i class="far fa-star" data-value="4"></i>
+                        <i class="far fa-star" data-value="5"></i>
+                    </div>
+                </div>
+
+                <div class="res-grid">
+                    <div class="input-group">
+                        <label>Nama Anda</label>
+                        <input type="text" id="testiName" placeholder="Contoh: Siti Rahma" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Asal / Status</label>
+                        <input type="text" id="testiRole" placeholder="Contoh: Wisatawan, Pelanggan Tetap">
+                    </div>
+                </div>
+
+                <div class="input-group" style="margin-top: 20px;">
+                    <label>Ulasan Anda</label>
+                    <textarea id="testiComment" rows="3" placeholder="Ceritakan pengalaman Anda makan di Rania Resto..." required style="background: rgba(255,255,255,0.03); border: 1px solid #333; padding: 12px; color: #fff; outline: none; border-radius: 4px; font-family: inherit; resize: vertical;"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-filled" style="width: 100%; margin-top: 25px; border-radius: 4px;">Kirim Ulasan</button>
+                <p id="testiFormMsg" class="testi-form-msg"></p>
+            </form>
         </div>
     </section>
 
@@ -725,12 +1174,35 @@
             { id: 7, cat: 'prasmanan', name: 'Prasmanan', price: 'Rp 25.000 - 60.000', desc: 'Menyajikan makanan pilihan dengan melimpah.', img: 'https://i.pinimg.com/1200x/34/0b/e4/340be45acb3a916e46ffe1d5870489cb.jpg' }
         ];
 
+        // 1B. DATA GALERI / PORTOFOLIO ACARA
+        const portfolioData = [
+            { id: 1, cat: 'vip', title: 'Kunjungan Tamu Kehormatan', date: 'Agustus 2023', desc: 'Jamuan makan siang khusus dalam rangka kunjungan kerja pejabat daerah beserta rombongan ke Rania Resto.', img: 'https://images.unsplash.com/photo-1549923746-c502d488b3ea?ixlib=rb-4.1.0&auto=format&fit=crop&w=900&q=80' },
+            { id: 2, cat: 'korporat', title: 'Gathering Tahunan Perusahaan', date: 'November 2023', desc: 'Acara makan malam dan penghargaan karyawan terbaik untuk 150 tamu undangan korporat.', img: 'https://images.unsplash.com/photo-1763429338698-439aa108e7fb?ixlib=rb-4.1.0&auto=format&fit=crop&w=900&q=80' },
+            { id: 3, cat: 'vip', title: 'Audiensi Delegasi Wisata', date: 'Februari 2024', desc: 'Rania Resto dipercaya menjamu delegasi pariwisata mancanegara yang meninjau kuliner khas daerah.', img: 'https://images.unsplash.com/photo-1638262052640-82e94d64664a?ixlib=rb-4.1.0&auto=format&fit=crop&w=900&q=80' },
+            { id: 4, cat: 'pernikahan', title: 'Resepsi Pernikahan Keluarga', date: 'Mei 2024', desc: 'Prasmanan lengkap untuk 300 tamu dengan dekorasi khusus bertema tradisional Banyuwangi.', img: 'https://images.unsplash.com/photo-1555550475-e10db1b4f8c7?ixlib=rb-4.1.0&auto=format&fit=crop&w=900&q=80' },
+            { id: 5, cat: 'komunitas', title: 'Buka Puasa Bersama Komunitas UMKM', date: 'Maret 2025', desc: 'Kegiatan berbagi bersama pelaku UMKM lokal sebagai bentuk kepedulian sosial Rania Resto.', img: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.1.0&auto=format&fit=crop&w=900&q=80' },
+            { id: 6, cat: 'korporat', title: 'Rapat Kerja Dinas Pariwisata', date: 'Juni 2025', desc: 'Menjadi lokasi rapat koordinasi tahunan dinas pariwisata bersama pelaku usaha kuliner setempat.', img: 'https://images.unsplash.com/photo-1763429338698-439aa108e7fb?ixlib=rb-4.1.0&auto=format&fit=crop&w=900&q=80&sat=-20' }
+        ];
+
+        // 1C. DATA TESTIMONI / RATING
+        const testiData = [
+            { id: 1, rating: 5, name: 'Dewi Kartika', role: 'Food Blogger', avatar: 'https://randomuser.me/api/portraits/women/44.jpg', quote: 'Ayam Betutu-nya juara! Bumbu meresap sampai tulang dan pelayanannya ramah sekali. Wajib mampir kalau ke Banyuwangi.' },
+            { id: 2, rating: 5, name: 'Ahmad Fauzi', role: 'Pelanggan Tetap', avatar: 'https://randomuser.me/api/portraits/men/32.jpg', quote: 'Sudah langganan 2 tahun, rasanya konsisten enak. Bebek bakarnya favorit keluarga kami setiap akhir pekan.' },
+            { id: 3, rating: 4, name: 'Sinta Ayu', role: 'Wisatawan', avatar: 'https://randomuser.me/api/portraits/women/68.jpg', quote: 'Tempatnya nyaman dan bersih, cocok untuk acara keluarga. Menu prasmanannya lengkap dan porsinya pas.' },
+            { id: 4, rating: 5, name: 'Rizky Pratama', role: 'Content Creator', avatar: 'https://randomuser.me/api/portraits/men/56.jpg', quote: 'Sop Iganya juara, kuahnya gurih dan dagingnya empuk banget. Harga juga masih ramah di kantong.' },
+            { id: 5, rating: 5, name: 'Melati Putri', role: 'Ibu Rumah Tangga', avatar: 'https://randomuser.me/api/portraits/women/22.jpg', quote: 'Rasanya benar-benar seperti masakan rumah. Anak-anak saya suka sekali, apalagi jus alpokadnya yang segar.' }
+        ];
+
         // 2. PRELOADER & INITIALIZATION
         window.addEventListener('load', () => {
             const preloader = document.getElementById('preloader');
             preloader.style.opacity = '0';
             setTimeout(() => preloader.style.display = 'none', 600);
             displayMenuItems('all');
+            displayPortfolioItems('all');
+            loadUserReviews();
+            initTestiSlider();
+            updateTestiSummary();
         });
 
         // 3. MOBILE MENU LOGIC
@@ -770,7 +1242,7 @@
 
         // 5. MENU DISPLAY & FILTER
         const menuContainer = document.getElementById('menu-list');
-        const filterBtns = document.querySelectorAll('.filter-btn');
+        const filterBtns = document.querySelectorAll('.filter-container .filter-btn');
 
         function displayMenuItems(category) {
             let filtered = category === 'all' ? menuData : menuData.filter(i => i.cat === category);
@@ -799,6 +1271,76 @@
             });
         });
 
+        // 5B. GALERI / PORTOFOLIO ACARA - DISPLAY & FILTER
+        const portfolioContainer = document.getElementById('portfolio-list');
+        const portfolioFilterBtns = document.querySelectorAll('.portfolio-filter .filter-btn');
+
+        function displayPortfolioItems(category) {
+            let filtered = category === 'all' ? portfolioData : portfolioData.filter(i => i.cat === category);
+
+            const catLabel = {
+                vip: 'Kunjungan VIP',
+                korporat: 'Korporat',
+                pernikahan: 'Pernikahan',
+                komunitas: 'Komunitas'
+            };
+
+            portfolioContainer.innerHTML = filtered.map(item => `
+                <div class="portfolio-card reveal active" data-id="${item.id}">
+                    <div class="portfolio-tag">${catLabel[item.cat] || item.cat}</div>
+                    <img src="${item.img}" alt="${item.title}" loading="lazy">
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-title">${item.title}</div>
+                        <div class="portfolio-date"><i class="far fa-calendar-alt"></i> ${item.date}</div>
+                    </div>
+                </div>
+            `).join('');
+
+            document.querySelectorAll('.portfolio-card').forEach(card => {
+                card.addEventListener('click', () => {
+                    const item = portfolioData.find(p => p.id === parseInt(card.dataset.id, 10));
+                    if (item) openLightbox(item);
+                });
+            });
+        }
+
+        portfolioFilterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                portfolioFilterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                displayPortfolioItems(btn.dataset.pcat);
+            });
+        });
+
+        // 5C. LIGHTBOX
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+        const lightboxTitle = document.getElementById('lightboxTitle');
+        const lightboxDesc = document.getElementById('lightboxDesc');
+        const lightboxClose = document.getElementById('lightboxClose');
+
+        function openLightbox(item) {
+            lightboxImg.src = item.img;
+            lightboxImg.alt = item.title;
+            lightboxTitle.textContent = item.title;
+            lightboxDesc.textContent = `${item.date} — ${item.desc}`;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) closeLightbox();
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+
         // 6. THEME TOGGLE
         const modeBtn = document.getElementById('modeBtn');
         modeBtn.addEventListener('click', () => {
@@ -825,6 +1367,227 @@
                 e.target.reset();
             }, 1500);
         });
+
+        // 8. TESTIMONI / RATING SLIDER
+        let testiIndex = 0;
+        let testiAutoplay = null;
+
+        function starsHTML(rating) {
+            let html = '';
+            for (let i = 1; i <= 5; i++) {
+                html += i <= rating
+                    ? '<i class="fas fa-star"></i>'
+                    : '<i class="far fa-star"></i>';
+            }
+            return html;
+        }
+
+        // Render ulang isi slide + dots (dipanggil saat load & tiap ada ulasan baru)
+        function renderTestiSlides() {
+            const track = document.getElementById('testiTrack');
+            const dotsWrap = document.getElementById('testiDots');
+
+            track.innerHTML = testiData.map(t => `
+                <div class="testi-slide">
+                    <div class="testi-stars">${starsHTML(t.rating)}</div>
+                    <p class="testi-quote">"${t.quote}"</p>
+                    <div class="testi-author">
+                        <img class="testi-avatar" src="${t.avatar}" alt="${t.name}" loading="lazy">
+                        <span class="testi-name">${t.name}</span>
+                        <span class="testi-role">${t.role}</span>
+                    </div>
+                </div>
+            `).join('');
+
+            dotsWrap.innerHTML = testiData.map((_, i) => `
+                <button class="testi-dot ${i === 0 ? 'active' : ''}" data-index="${i}" aria-label="Ulasan ke-${i + 1}"></button>
+            `).join('');
+
+            testiIndex = 0;
+            updateTestiSlider();
+        }
+
+        // Setup event listener SEKALI SAJA (dot pakai delegasi supaya aman saat re-render)
+        function initTestiSlider() {
+            const track = document.getElementById('testiTrack');
+            const dotsWrap = document.getElementById('testiDots');
+
+            renderTestiSlides();
+
+            dotsWrap.addEventListener('click', (e) => {
+                const dot = e.target.closest('.testi-dot');
+                if (!dot) return;
+                testiIndex = parseInt(dot.dataset.index, 10);
+                updateTestiSlider();
+                resetTestiAutoplay();
+            });
+
+            document.getElementById('testiPrev').addEventListener('click', () => {
+                testiIndex = (testiIndex - 1 + testiData.length) % testiData.length;
+                updateTestiSlider();
+                resetTestiAutoplay();
+            });
+
+            document.getElementById('testiNext').addEventListener('click', () => {
+                testiIndex = (testiIndex + 1) % testiData.length;
+                updateTestiSlider();
+                resetTestiAutoplay();
+            });
+
+            // Swipe support untuk mobile
+            let startX = 0;
+            track.addEventListener('touchstart', (e) => {
+                startX = e.touches[0].clientX;
+            }, { passive: true });
+
+            track.addEventListener('touchend', (e) => {
+                const diff = e.changedTouches[0].clientX - startX;
+                if (diff > 50) {
+                    testiIndex = (testiIndex - 1 + testiData.length) % testiData.length;
+                    updateTestiSlider();
+                    resetTestiAutoplay();
+                } else if (diff < -50) {
+                    testiIndex = (testiIndex + 1) % testiData.length;
+                    updateTestiSlider();
+                    resetTestiAutoplay();
+                }
+            }, { passive: true });
+
+            startTestiAutoplay();
+        }
+
+        function updateTestiSlider() {
+            const track = document.getElementById('testiTrack');
+            track.style.transform = `translateX(-${testiIndex * 100}%)`;
+
+            document.querySelectorAll('.testi-dot').forEach((dot, i) => {
+                dot.classList.toggle('active', i === testiIndex);
+            });
+        }
+
+        function startTestiAutoplay() {
+            testiAutoplay = setInterval(() => {
+                testiIndex = (testiIndex + 1) % testiData.length;
+                updateTestiSlider();
+            }, 5000);
+        }
+
+        function resetTestiAutoplay() {
+            clearInterval(testiAutoplay);
+            startTestiAutoplay();
+        }
+
+        // 9. RINGKASAN RATING (dihitung otomatis dari seluruh ulasan)
+        function updateTestiSummary() {
+            const ratings = testiData.map(t => t.rating);
+            const avg = ratings.reduce((a, b) => a + b, 0) / ratings.length;
+            const avgRounded = Math.round(avg * 10) / 10;
+
+            document.querySelector('.testi-score').textContent = avgRounded.toFixed(1);
+            document.querySelector('.testi-summary-text').textContent = `Berdasarkan ${ratings.length} ulasan tamu`;
+
+            const full = Math.floor(avgRounded);
+            const decimal = avgRounded - full;
+            const hasHalf = decimal >= 0.25 && decimal < 0.75;
+            const roundUp = decimal >= 0.75;
+            const fullCount = full + (roundUp ? 1 : 0);
+
+            let html = '';
+            for (let i = 1; i <= 5; i++) {
+                if (i <= fullCount) html += '<i class="fas fa-star"></i>';
+                else if (i === fullCount + 1 && hasHalf) html += '<i class="fas fa-star-half-alt"></i>';
+                else html += '<i class="far fa-star"></i>';
+            }
+            document.querySelector('.testi-summary-stars').innerHTML = html;
+        }
+
+        // 10. ULASAN & RATING MANUAL DARI PENGUNJUNG
+        let selectedRating = 0;
+        const starInputEls = document.querySelectorAll('#starInput i');
+
+        function highlightStars(count) {
+            starInputEls.forEach(star => {
+                const val = parseInt(star.dataset.value, 10);
+                star.classList.toggle('fas', val <= count);
+                star.classList.toggle('far', val > count);
+            });
+        }
+
+        starInputEls.forEach(star => {
+            star.addEventListener('click', () => {
+                selectedRating = parseInt(star.dataset.value, 10);
+                highlightStars(selectedRating);
+            });
+            star.addEventListener('mouseenter', () => {
+                highlightStars(parseInt(star.dataset.value, 10));
+            });
+        });
+
+        document.getElementById('starInput').addEventListener('mouseleave', () => {
+            highlightStars(selectedRating);
+        });
+
+        function saveUserReviews() {
+            const userOnes = testiData.filter(t => t.userSubmitted);
+            try {
+                localStorage.setItem('raniaUserReviews', JSON.stringify(userOnes));
+            } catch (e) {
+                console.error('Gagal menyimpan ulasan:', e);
+            }
+        }
+
+        function loadUserReviews() {
+            try {
+                const saved = JSON.parse(localStorage.getItem('raniaUserReviews') || '[]');
+                if (Array.isArray(saved) && saved.length) {
+                    testiData.unshift(...saved);
+                }
+            } catch (e) {
+                console.error('Gagal memuat ulasan tersimpan:', e);
+            }
+        }
+
+        document.getElementById('testiForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const msgEl = document.getElementById('testiFormMsg');
+
+            if (selectedRating === 0) {
+                msgEl.style.color = '#e05555';
+                msgEl.textContent = 'Silakan pilih rating bintang terlebih dahulu.';
+                return;
+            }
+
+            const name = document.getElementById('testiName').value.trim();
+            const role = document.getElementById('testiRole').value.trim() || 'Pengunjung';
+            const comment = document.getElementById('testiComment').value.trim();
+
+            if (!name || !comment) return;
+
+            const newReview = {
+                id: Date.now(),
+                rating: selectedRating,
+                name,
+                role,
+                avatar: `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&background=D4AF37&color=000&bold=true`,
+                quote: comment,
+                userSubmitted: true
+            };
+
+            testiData.unshift(newReview);
+            saveUserReviews();
+            renderTestiSlides();
+            updateTestiSummary();
+
+            msgEl.style.color = 'var(--primary-gold)';
+            msgEl.textContent = 'Terima kasih! Ulasan Anda berhasil ditambahkan.';
+
+            e.target.reset();
+            selectedRating = 0;
+            highlightStars(0);
+
+            setTimeout(() => { msgEl.textContent = ''; }, 4000);
+        });
+
 
     </script>
 </body>
